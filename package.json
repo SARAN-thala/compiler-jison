@@ -1,0 +1,23 @@
+{
+  "name": "compiler-jison",
+  "version": "1.0.0",
+  "description": "####for learning compilers using JISON tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SARAN-thala/compiler-jison.git"
+  },
+  "author": "saran",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SARAN-thala/compiler-jison/issues"
+  },
+  "homepage": "https://github.com/SARAN-thala/compiler-jison#readme",
+  "devDependencies": {
+    "in-words": "^0.2.1",
+    "jison": "^0.4.17"
+  }
+}

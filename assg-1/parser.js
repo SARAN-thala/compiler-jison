@@ -1,9 +1,13 @@
-const parser = {};
-
-parser.makeList = function (val1, sym, val2) {
-    val1 = `(${val1}`;
-    val2 = `${val2})`;
-    return (val1 + sym + val2)
+const parser = function (tree) {
+    if (typeof tree.left != 'number') {
+        tree.left = parser(tree.left);
+    }
+    if (typeof tree.right != 'number') {
+        tree.right = parser(tree.right);
+    }
+    tree.left = `(${tree.left}`;
+    tree.right = `${tree.right})`;
+    return (tree.left + tree.sym + tree.right);
 };
 
-module.exports = parser;
+exports.parse = parser;

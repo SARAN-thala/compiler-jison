@@ -25,7 +25,7 @@
 /lex
 
 %{
-    var parse = require('./parser.js').parse;
+    var parse = require('./numberToWords.js').parse;
 %}
 
 /* operator associations and precedence */

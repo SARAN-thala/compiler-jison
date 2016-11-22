@@ -10,15 +10,15 @@
     "type": "git",
     "url": "git+https://github.com/SARAN-thala/compiler-jison.git"
   },
-  "author": "saran",
+  "author": "Saranraj Sekar",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/SARAN-thala/compiler-jison/issues"
   },
   "homepage": "https://github.com/SARAN-thala/compiler-jison#readme",
   "devDependencies": {
-    "in-words": "^0.2.1",
     "jison": "^0.4.17",
-    "mocha": "^3.1.2"
+    "mocha": "^3.1.2",
+    "number-to-words": "^1.2.3"
   }
 }

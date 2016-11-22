@@ -1,7 +1,7 @@
 const assert = require('assert');
 const parser = require('../src/parser.js');
 
-describe('parseTree', function () {
+describe('parserTree', function () {
     it('should return nested tree structure ', function () {
         let givenTree = {
             sym: '-',

@@ -24,5 +24,3 @@ const parser = function (tree) {
 };
 
 exports.parse = parser;
-
-

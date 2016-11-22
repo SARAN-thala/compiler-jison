@@ -13,19 +13,13 @@
 "-"                   return '-'
 "+"                   return '+'
 "^"                   return '^'
-"!"                   return '!'
-"%"                   return '%'
-"("                   return '('
-")"                   return ')'
-"PI"                  return 'PI'
-"E"                   return 'E'
 <<EOF>>               return 'EOF'
 .                     return 'INVALID'
 
 /lex
 
 %{
-    var parse = require('./parser.js').parse;
+    var parserTree = require('./parser.js');
 %}
 
 /* operator associations and precedence */
@@ -43,7 +37,8 @@
 
 expressions
     : e EOF
-        { console.log(parse($$)); }
+        { typeof console !== 'undefined' ? console.log(parserTree.parse($1)) : print($1);
+          return $1; }
     ;
 
 e
@@ -56,17 +51,7 @@ e
     | e '/' e
        {$$ = {left:$1,sym:$2,right:$3};}
     | e '^' e
-        {$$ = Math.pow($1, $3);}
-    | e '!'
-        {{
-          $$ = (function fact (n) { return n==0 ? 1 : fact(n-1) * n })($1);
-        }}
-    | e '%'
-        {$$ = $1/100;}
-    | '-' e %prec UMINUS
-        {$$ = -$2;}
-    | '(' e ')'
-        {$$ = $2;}
+        {$$ = {left:$1,sym:$2,right:$3};}
     | NUMBER
         {$$ = Number(yytext);}
     ;
